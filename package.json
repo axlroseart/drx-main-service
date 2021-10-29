@@ -1,0 +1,62 @@
+{
+  "name": "drx-main-service",
+  "version": "1.0.0",
+  "description": "drx main service for mobile app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axlroseart/drx-main-service.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/axlroseart/drx-main-service/issues"
+  },
+  "homepage": "https://github.com/axlroseart/drx-main-service#readme",
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@types/react": "^17.0.33",
+    "@types/react-dom": "^17.0.10",
+    "babel-loader": "^8.2.3",
+    "commitizen": "^4.2.4",
+    "eslint": "^7.1.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "postcss": "^8.3.11",
+    "prettier": "^2.4.1",
+    "stylelint": "^14.0.1",
+    "typescript": "^4.4.4",
+    "webpack": "^5.60.0"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^9.0.1",
+    "html-webpack-plugin": "^5.5.0",
+    "postcss-pxtorem": "^6.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
