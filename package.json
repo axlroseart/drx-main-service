@@ -49,6 +49,7 @@
     "webpack-dev-server": "^4.4.0"
   },
   "dependencies": {
+    "@ryanx/ryan-cli": "^1.0.1",
     "autoprefixer": "^10.4.0",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^9.0.1",
@@ -57,7 +58,8 @@
     "qiankun": "^2.5.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "sass": "^1.43.4"
+    "sass": "^1.43.4",
+    "web-vitals": "^2.1.2"
   },
   "browserslist": {
     "production": [

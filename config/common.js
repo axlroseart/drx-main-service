@@ -2,57 +2,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-const autoprefixer = require('autoprefixer');
-const pxtorem = require('postcss-pxtorem');
 const paths = require('./path');
 
 const { src, build, publicSrc } = paths;
-
-const sassLoadConfig = [
-  'style-loader',
-  'css-loader',
-  {
-    loader: 'postcss-loader',
-    options: {
-      postcssOptions: {
-        plugins: () => {
-          const plugin = [autoprefixer(), pxtorem({
-            rootValue: 100,
-            propList: [
-              '*',
-              '!min-width',
-              '!border',
-              '!border-left',
-              '!border-right',
-              '!border-top',
-              '!border-bottom',
-            ],
-            selectorBlackList: [
-              'no_rem',
-            ],
-          })];
-          return plugin;
-        },
-      },
-    },
-  },
-  {
-    loader: 'sass-loader',
-    options: {
-      sourceMap: true,
-      sassOptions: {
-        outputStyle: 'compressed',
-      },
-    },
-  },
-];
 
 module.exports = {
   entry: [`${src}/root.tsx`],
   output: {
     path: build,
     filename: '[name].[hash].js',
-    publicPath: '/'
+    publicPath: '/',
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -78,56 +37,6 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              postcssOptions: {
-                plugins: () => [
-                  autoprefixer(),
-                ],
-              },
-            }
-          },
-        ],
-      },
-      {
-        test: /\.scss$/,
-        exclude: /node_modules/,
-        use: sassLoadConfig,
-      },
-      {
-        test: /\.(jpe?g|png|gif|svg)$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              emitFile: true,
-              limit: 3 * 1024,
-              name: 'images/[name]__[hash:5].[ext]',
-              publicPath: publicSrc,
-            },
-          },
-        ],
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|mp3|mp4)$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'assets/[name]__[hash:5].[ext]',
-              publicPath: publicSrc,
-            },
-          },
-        ],
-      },
-      {
         test: /\.(ts|tsx)?$/,
         use: [{
           loader: 'babel-loader',
@@ -145,7 +54,8 @@ module.exports = {
     }
   },
   devServer: {
-    open: true,
+    historyApiFallback: true,
+    open: false,
     port: 8080
   }
 }

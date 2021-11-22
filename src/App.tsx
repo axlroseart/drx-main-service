@@ -1,11 +1,14 @@
 import React from 'react'
-import Home from './pages/home/index'
-import './assets/styles/reset'
 
 function App() {
   return (
     <div className="app-wrap">
-      <Home />
+      <header className="home-header">
+        <div className="test">main service</div>
+        <p>
+          welcome to home page.
+        </p>
+      </header>
     </div>
   );
 }
