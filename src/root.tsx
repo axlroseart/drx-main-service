@@ -11,7 +11,7 @@ registerMicroApps(
   [
     {
       name: 'react-h5',
-      entry: '//localhost:8000',
+      entry: '//localhost:8000/',
       container: '#root',
       activeRule: '/react-h5',
       props: {
